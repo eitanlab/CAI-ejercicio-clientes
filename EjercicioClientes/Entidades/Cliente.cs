@@ -21,6 +21,12 @@ namespace Entidades
         string _usuario;
         string _host;
         int _id;
+        public Cliente(int dni,string nombre,string apellido)
+        {
+            _dni = dni;
+            _nombre = nombre;
+            _apellido = apellido;
+        }
         public Cliente(int dni,string nombre, string apellido, string direccion, string email,string telefono,string fechaNacimiento,string fechaAlta, bool activo,string usuario,string host,int id) {
             _dni = dni;
             _nombre = nombre;
@@ -35,16 +41,12 @@ namespace Entidades
             _host = host;
             _id = id;
         }
-        public Cliente(int dni, string nombre, string apellido, string direccion, string email, string telefono, string fechaNacimiento, string usuario)
+        public Cliente(int dni, string nombre, string apellido, string direccion)
         {
             _dni = dni;
             _nombre = nombre;
             _apellido = apellido;
             _direccion = direccion;
-            _email = email;
-            _telefono = telefono;
-            _fechaNacimiento = fechaNacimiento;
-            _usuario = usuario;
         }
         public int Dni { get => _dni; set => _dni = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
@@ -59,6 +61,9 @@ namespace Entidades
         public string Host { get => _host; set => _host = value; }
         public int Id { get => _id; set => _id = value; }
 
-
+        public override string ToString()
+        {
+            return "Nombre: " + _nombre + " Apellido: " + _apellido;
+        }
     }
 }
