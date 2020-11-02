@@ -1,0 +1,13 @@
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Negocio.dll
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Negocio.pdb
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Datos.dll
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Entidades.dll
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Datos.pdb
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Entidades.pdb
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\obj\Debug\Negocio.dll
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\Negocio\obj\Debug\Negocio.pdb

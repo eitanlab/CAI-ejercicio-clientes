@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace MainForm
 {
-    public abstract class FormHelpers
+    public static class FormHelpers
     {
-        public bool emptyField(string fieldContent)
+        public static bool ValidarNull(string content)
         {
-            if(fieldContent == null)
+            if (content != null)
             {
                 return true;
             }
+            return false;
+        }
+        public static bool ValidarDni(string content)
+        {
+            if(ValidarNull(content))
+                if(content != null && content.Length == 8)
+                    return true;
             return false;
         }
     }

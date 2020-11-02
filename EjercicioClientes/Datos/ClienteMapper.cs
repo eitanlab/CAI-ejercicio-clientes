@@ -33,13 +33,15 @@ namespace Datos
         private NameValueCollection ReverseMap(Cliente cliente)
         {
             NameValueCollection n = new NameValueCollection();
+            n.Add("Dni", cliente.Dni);
             n.Add("Nombre", cliente.Nombre);
             n.Add("Apellido", cliente.Apellido);
             n.Add("Direccion", cliente.Direccion);
             n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             n.Add("Email", cliente.Email);
             n.Add("Telefono", cliente.Telefono);
-            n.Add("FechaNacimiento", cliente.FechaNacimiento);
+            n.Add("FechaNacimiento", "12-12-1990");
+            n.Add("FechaAlta", DateTime.Today.ToString());
             n.Add("Activo", cliente.Activo.ToString());
             n.Add("Usuario", cliente.Usuario);
             return n;

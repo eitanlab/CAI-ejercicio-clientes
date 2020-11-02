@@ -21,7 +21,7 @@ namespace Negocio
             List<Cliente> result = mapper.TraerTodos();
             return result;
         }
-        public int InsertarCliente(int dni,string nombre,string apellido,string direccion)
+        public int InsertarCliente(string dni,string nombre,string apellido,string direccion)
         {
             Cliente cliente = new Cliente(dni, nombre, apellido, direccion);
             TransactionResult resultante = mapper.Insert(cliente);
@@ -33,7 +33,6 @@ namespace Negocio
             {
                 throw new Exception("Hubo un problema con la petición al servidor. Detalle: " + resultante.Error);
             }
-
         }
     }
 }
