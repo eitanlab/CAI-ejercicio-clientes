@@ -10,10 +10,11 @@ C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainFor
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\bin\Debug\Datos.pdb
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\bin\Debug\Newtonsoft.Json.xml
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.csprojAssemblyReference.cache
-C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.Form1.resources
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.Properties.Resources.resources
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.csproj.GenerateResource.cache
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.csproj.CoreCompileInputs.cache
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.csproj.CopyComplete
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.exe
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.pdb
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.ClientesForm.resources
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.Home.resources

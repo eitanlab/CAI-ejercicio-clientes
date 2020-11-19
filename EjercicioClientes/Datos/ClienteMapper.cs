@@ -19,7 +19,7 @@ namespace Datos
             return list;
         }
         public List<Cliente> TraerTodos() { 
-            string json = WebHelper.Get("/api/v1/cliente");
+            string json = WebHelper.Get("/api/v1/cliente/"+ConfigurationManager.AppSettings["Legajo"]);
             List<Cliente> resultado = MapList(json);
             return resultado;
         }
@@ -37,13 +37,12 @@ namespace Datos
             n.Add("Nombre", cliente.Nombre);
             n.Add("Apellido", cliente.Apellido);
             n.Add("Direccion", cliente.Direccion);
-            n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             n.Add("Email", cliente.Email);
             n.Add("Telefono", cliente.Telefono);
             n.Add("FechaNacimiento", "12-12-1990");
             n.Add("FechaAlta", DateTime.Today.ToString());
             n.Add("Activo", cliente.Activo.ToString());
-            n.Add("Usuario", cliente.Usuario);
+            n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             return n;
         }
         private TransactionResult MapResultado(string json)

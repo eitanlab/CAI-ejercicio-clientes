@@ -9,19 +9,15 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class ClienteServicio
+    public static class ClienteServicio
     {
-        private ClienteMapper mapper;
-        public ClienteServicio()
-        {
-            mapper = new ClienteMapper();
-        } 
-        public List<Cliente> TraerClientes()
+        private static ClienteMapper mapper = new ClienteMapper();
+        public static List<Cliente> TraerClientes()
         {
             List<Cliente> result = mapper.TraerTodos();
             return result;
         }
-        public int InsertarCliente(string dni,string nombre,string apellido,string direccion)
+        public static int InsertarCliente(string dni,string nombre,string apellido,string direccion)
         {
             Cliente cliente = new Cliente(dni, nombre, apellido, direccion);
             TransactionResult resultante = mapper.Insert(cliente);
