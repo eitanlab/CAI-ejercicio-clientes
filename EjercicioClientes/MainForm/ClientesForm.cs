@@ -31,7 +31,7 @@ namespace MainForm
         private void CrearCliente()
         {
             if (
-                !string.IsNullOrEmpty(textBox1.Text) &&
+                !string.IsNullOrEmpty(maskedTextBox1.Text) &&
                 !string.IsNullOrEmpty(textBox2.Text) &&
                 !string.IsNullOrEmpty(textBox3.Text) &&
                 !string.IsNullOrEmpty(textBox4.Text)
@@ -39,12 +39,12 @@ namespace MainForm
              try
                 {
                     int resultado = ClienteServicio.InsertarCliente(
-                        textBox1.Text,
+                        maskedTextBox1.Text,
                         textBox2.Text,
                         textBox3.Text,
                         textBox4.Text);
                     CargarClientes();
-                    textBox1.Clear();
+                    maskedTextBox1.Clear();
                     textBox2.Clear();
                     textBox3.Clear();
                     textBox4.Clear();
