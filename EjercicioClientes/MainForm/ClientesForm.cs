@@ -64,8 +64,7 @@ namespace MainForm
             try
             {
                 listView1.Items.Clear();
-                List<Cliente> listadoClientes = new List<Cliente>();
-                listadoClientes = ClienteServicio.TraerClientes();
+                List<Cliente> listadoClientes = ClienteServicio.TraerClientes();
                 listadoClientes.ForEach(cliente =>
                 {
                     ListViewItem item = new ListViewItem(new string[]

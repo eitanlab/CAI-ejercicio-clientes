@@ -10,15 +10,16 @@ namespace Entidades
     [DataContract]
     public class Cuenta
     {
-        int _nroCuenta;
+        string _nroCuenta;
         string _descripcion;
         int _saldo;
         string _fechaApertura;
         string _fechaModificacion;
         bool _activo;
-        int _idCliente;
+        string _idCliente;
         int _id;
-        public Cuenta(int nro, string desc, int idCliente)
+        public Cuenta() { }
+        public Cuenta(string nro, string desc, string idCliente)
         {
             _nroCuenta = nro;
             _descripcion = desc;
@@ -28,7 +29,7 @@ namespace Entidades
             _activo = true;
             _idCliente = idCliente;
         }
-        public Cuenta(int nro, string desc,int saldo,string fechaApertura, string fechaModificacion,bool activo,int idCliente, int id) {
+        public Cuenta(string nro, string desc,int saldo,string fechaApertura, string fechaModificacion,bool activo,string idCliente, int id) {
             _nroCuenta = nro;
             _descripcion = desc;
             _saldo = saldo;
@@ -39,7 +40,7 @@ namespace Entidades
             _id = id;
         }
         [DataMember]
-        public int NroCuenta { get => _nroCuenta; set => _nroCuenta = value; }
+        public string NroCuenta { get => _nroCuenta; set => _nroCuenta = value; }
         [DataMember]
         public string Descripcion { get => _descripcion; set => _descripcion= value; }
         [DataMember]
@@ -51,8 +52,12 @@ namespace Entidades
         [DataMember]
         public bool Activo { get => _activo; set => _activo= value; }
         [DataMember]
-        public int IdCliente { get => _idCliente; set => _idCliente= value; }
+        public string IdCliente { get => _idCliente; set => _idCliente= value; }
         [DataMember]
         public int Id { get => _id; set => _id = value; }
+        public override string ToString()
+        {
+            return "Nro. de cuenta: " + _nroCuenta + "/ Saldo: " + _saldo;
+        }
     }
 }

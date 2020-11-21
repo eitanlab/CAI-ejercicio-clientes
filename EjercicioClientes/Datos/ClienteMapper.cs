@@ -10,27 +10,18 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class ClienteMapper
+    public static class ClienteMapper
     {
-        
-        private List<Cliente> MapList(string json)
+        #region UTILIDADES
+        // MapList transforma un json en una lista
+        private static List<Cliente> MapList(string json)
         {
             List<Cliente> list = JsonConvert.DeserializeObject<List<Cliente>>(json);
             return list;
         }
-        public List<Cliente> TraerTodos() { 
-            string json = WebHelper.Get("/api/v1/cliente/"+ConfigurationManager.AppSettings["Legajo"]);
-            List<Cliente> resultado = MapList(json);
-            return resultado;
-        }
-        public TransactionResult Insert(Cliente cliente)
-        {
-            NameValueCollection obj = ReverseMap(cliente);
-            string result = WebHelper.Post("/api/v1/cliente", obj);
-            TransactionResult resultadoTransaccion = MapResultado(result);
-            return resultadoTransaccion;
-        }
-        private NameValueCollection ReverseMap(Cliente cliente)
+        
+        // ReverseMap recibe un objeto y devuelve un NameValueCollection (Serializa)
+        private static NameValueCollection ReverseMap(Cliente cliente)
         {
             NameValueCollection n = new NameValueCollection();
             n.Add("Dni", cliente.Dni);
@@ -45,12 +36,34 @@ namespace Datos
             n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             return n;
         }
-        private TransactionResult MapResultado(string json)
+
+        // MapList transforma un json en un TransactionResult
+        private static TransactionResult MapResultado(string json)
         {
             TransactionResult lst = JsonConvert.DeserializeObject<TransactionResult>(json);
             return lst;
         }
-        
+        #endregion
 
+        #region GET POST
+        // TraerTodos trae todos los elementos de una entidad. 
+        // Llama a la API, convierte el json en una lista con Maplist
+        // Retorna la lista
+        public static List<Cliente> TraerTodos()
+        {
+            string json = WebHelper.Get("/api/v1/cliente/" + ConfigurationManager.AppSettings["Legajo"]);
+            List<Cliente> resultado = MapList(json);
+            return resultado;
+        }
+
+        // Insert da de alta un nuevo objeto en la API
+        public static TransactionResult Insert(Cliente cliente)
+        {
+            NameValueCollection obj = ReverseMap(cliente);
+            string result = WebHelper.Post("/api/v1/cliente", obj);
+            TransactionResult resultadoTransaccion = MapResultado(result);
+            return resultadoTransaccion;
+        }
+        #endregion
     }
 }
