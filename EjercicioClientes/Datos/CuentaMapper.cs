@@ -46,7 +46,7 @@ namespace Datos
         public static TransactionResult Insert(Cuenta cuenta)
         {
             NameValueCollection obj = ReverseMap(cuenta);
-            string result = WebHelper.Post("api/v1/cuenta", obj);
+            string result = WebHelper.Post("/api/v1/cuenta", obj);
             TransactionResult resultadoTransaccion = MapResultado(result);
             return resultadoTransaccion; 
         }

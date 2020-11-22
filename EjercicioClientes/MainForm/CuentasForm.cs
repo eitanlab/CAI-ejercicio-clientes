@@ -44,10 +44,7 @@ namespace MainForm
                            activo
                     });
                     listCuentas.Items.Add(item);
-                });
-                
-                
-                // listCuentas.
+                });                
             } catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
@@ -57,17 +54,51 @@ namespace MainForm
         {
             try
             {
-                cmbCientes.Items.Clear();
+                cmbClientes.Items.Clear();
                 var bindingSource1 = new BindingSource();
                 bindingSource1.DataSource = ClienteServicio.TraerClientes();
-                cmbCientes.DataSource = bindingSource1.DataSource;
-                cmbCientes.DisplayMember = "Nombre";
-                cmbCientes.ValueMember = "Id";
+                cmbClientes.DataSource = bindingSource1.DataSource;
+                cmbClientes.DisplayMember = "Nombre";
+                cmbClientes.ValueMember = "Id";
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
+        }
+        private void CrearCuenta()
+        {
+            if (
+                !string.IsNullOrEmpty(txtNumeroCuenta.Text) &&
+                !string.IsNullOrEmpty(txtDescripcion.Text)
+            )
+            {
+                try
+                {
+                    int resultado = CuentasServicio.InsertarCuenta(
+                        txtNumeroCuenta.Text,
+                        txtDescripcion.Text,
+                        cmbClientes.SelectedValue.ToString());
+                    CargarListadoCuentas();
+                    txtNumeroCuenta.Clear();
+                    txtDescripcion.Clear();
+                    cmbClientes.SelectedIndex = 0;
+                    MessageBox.Show("La cuenta se ha insertado correctamente, el número de operación es: " + resultado);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor revise los campos ingresados");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CrearCuenta();
         }
     }
 }

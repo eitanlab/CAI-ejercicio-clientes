@@ -39,7 +39,7 @@
             this.fechaModificacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.activo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbCientes = new System.Windows.Forms.ComboBox();
+            this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.txtNumeroCuenta = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -129,7 +129,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbCientes);
+            this.groupBox1.Controls.Add(this.cmbClientes);
             this.groupBox1.Controls.Add(this.txtNumeroCuenta);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
@@ -143,13 +143,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alta cuenta";
             // 
-            // cmbCientes
+            // cmbClientes
             // 
-            this.cmbCientes.FormattingEnabled = true;
-            this.cmbCientes.Location = new System.Drawing.Point(104, 106);
-            this.cmbCientes.Name = "cmbCientes";
-            this.cmbCientes.Size = new System.Drawing.Size(158, 21);
-            this.cmbCientes.TabIndex = 20;
+            this.cmbClientes.FormattingEnabled = true;
+            this.cmbClientes.Location = new System.Drawing.Point(104, 106);
+            this.cmbClientes.Name = "cmbClientes";
+            this.cmbClientes.Size = new System.Drawing.Size(158, 21);
+            this.cmbClientes.TabIndex = 20;
             // 
             // txtNumeroCuenta
             // 
@@ -171,6 +171,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Crear cuenta";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -246,7 +247,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbCientes;
+        private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListView listCuentas;
