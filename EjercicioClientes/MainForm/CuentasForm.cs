@@ -78,7 +78,8 @@ namespace MainForm
                     int resultado = CuentasServicio.InsertarCuenta(
                         txtNumeroCuenta.Text,
                         txtDescripcion.Text,
-                        cmbClientes.SelectedValue.ToString());
+                        (int)cmbClientes.SelectedValue
+                    );
                     CargarListadoCuentas();
                     txtNumeroCuenta.Clear();
                     txtDescripcion.Clear();

@@ -16,10 +16,10 @@ namespace Entidades
         string _fechaApertura;
         string _fechaModificacion;
         bool _activo;
-        string _idCliente;
+        int _idCliente;
         int _id;
         public Cuenta() { }
-        public Cuenta(string nro, string desc, string idCliente)
+        public Cuenta(string nro, string desc, int idCliente)
         {
             _nroCuenta = nro;
             _descripcion = desc;
@@ -52,7 +52,7 @@ namespace Entidades
         [DataMember]
         public bool Activo { get => _activo; set => _activo= value; }
         [DataMember]
-        public string IdCliente { get => _idCliente; set => _idCliente= value; }
+        public int IdCliente { get => _idCliente; set => _idCliente= value; }
         [DataMember]
         public int Id { get => _id; set => _id = value; }
         public override string ToString()

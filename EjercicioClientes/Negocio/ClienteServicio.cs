@@ -29,5 +29,17 @@ namespace Negocio
                 throw new Exception("Hubo un problema con la petición al servidor. Detalle: " + resultante.Error);
             }
         }
+        public static bool ExisteCliente(int id)
+        {
+            List<Cliente> clientes = TraerClientes();
+            foreach (Cliente c in clientes)
+            {
+                if (c.Id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

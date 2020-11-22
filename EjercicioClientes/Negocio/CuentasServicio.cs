@@ -15,17 +15,25 @@ namespace Negocio
             List<Cuenta> lst = CuentaMapper.TraerTodos();
             return lst;
         }
-        public static int InsertarCuenta(string nroCuenta, string descripcion, string idCliente)
+        public static int InsertarCuenta(string nroCuenta, string descripcion, int idCliente)
         {
-            Cuenta cuenta = new Cuenta(nroCuenta, descripcion, idCliente);
-            TransactionResult resultante = CuentaMapper.Insert(cuenta);
-            if (resultante.IsOk)
+            if (ClienteServicio.ExisteCliente(idCliente))
             {
-                return resultante.Id;
+                Cuenta cuenta = new Cuenta(nroCuenta, descripcion, idCliente);
+                TransactionResult resultante = CuentaMapper.Insert(cuenta);
+                if (resultante.IsOk)
+                {
+                    return resultante.Id;
+                }
+                else
+                {
+                    throw new Exception("Hubo un problema con la petición al servidor: " + resultante.Error);
+                }
             } else
             {
-                throw new Exception("Hubo un problema con la petición al servidor: " + resultante.Error);
+                throw new Exception("El cliente que quiere asociar a la cuenta no existe");
             }
+            
         } 
     }
 }
