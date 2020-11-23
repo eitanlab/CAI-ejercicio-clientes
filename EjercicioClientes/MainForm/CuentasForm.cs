@@ -25,6 +25,20 @@ namespace MainForm
             CargarListadoCuentas();
             CargarClientes();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CrearCuenta();
+        }
+
+        private void listCuentas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listCuentas.SelectedItems.Count == 0)
+                return;
+            ListViewItem item = listCuentas.SelectedItems[0];
+            txtCtaSeleccionada.Text = item.SubItems[0].Text;
+            txtSaldoActual.Text = item.SubItems[2].Text;
+            btnModificarSaldo.Enabled = true;
+        }
         private void CargarListadoCuentas()
         {
             try
@@ -38,6 +52,7 @@ namespace MainForm
                     {
                            cuenta.Id.ToString(),
                            cuenta.NroCuenta,
+                           cuenta.Saldo.ToString(),
                            cuenta.Descripcion,
                            cuenta.FechaApertura,
                            cuenta.FechaModificacion,
@@ -97,9 +112,31 @@ namespace MainForm
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnModificarSaldo_Click(object sender, EventArgs e)
         {
-            CrearCuenta();
+            if(string.IsNullOrEmpty(txtNuevoSaldo.Text))
+            {
+                MessageBox.Show("Ingrese el nuevo saldo de cuenta");
+            } else
+            {
+                try
+                {
+                    int resultado = CuentasServicio.ModificarSaldo(
+                        int.Parse(txtCtaSeleccionada.Text),
+                        double.Parse(txtNuevoSaldo.Text));
+                    CargarListadoCuentas();
+                    txtSaldoActual.Clear();
+                    txtNuevoSaldo.Clear();
+                    txtCtaSeleccionada.Clear();
+                    MessageBox.Show(
+                        "Se ha modificado el saldo a " + txtNuevoSaldo.Text +
+                        " en la cuenta " + txtCtaSeleccionada.Text + " | operación " + resultado);
+                } catch(Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+                
+            }
         }
     }
 }

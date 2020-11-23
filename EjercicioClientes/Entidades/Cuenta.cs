@@ -12,7 +12,7 @@ namespace Entidades
     {
         string _nroCuenta;
         string _descripcion;
-        int _saldo;
+        double _saldo;
         string _fechaApertura;
         string _fechaModificacion;
         bool _activo;
@@ -29,7 +29,7 @@ namespace Entidades
             _activo = true;
             _idCliente = idCliente;
         }
-        public Cuenta(string nro, string desc,int saldo,string fechaApertura, string fechaModificacion,bool activo,string idCliente, int id) {
+        public Cuenta(string nro, string desc,int saldo,string fechaApertura, string fechaModificacion,bool activo,int idCliente, int id) {
             _nroCuenta = nro;
             _descripcion = desc;
             _saldo = saldo;
@@ -44,7 +44,7 @@ namespace Entidades
         [DataMember]
         public string Descripcion { get => _descripcion; set => _descripcion= value; }
         [DataMember]
-        public int Saldo { get => _saldo; set => _saldo= value; }
+        public double Saldo { get => _saldo; set => _saldo= value; }
         [DataMember]
         public string FechaApertura{ get => _fechaApertura; set => _fechaApertura= value; }
         [DataMember]

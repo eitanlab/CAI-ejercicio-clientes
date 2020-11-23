@@ -17,16 +17,25 @@ namespace Datos
             List<Cuenta> list = JsonConvert.DeserializeObject<List<Cuenta>>(json);
             return list;
         }
-        private static NameValueCollection ReverseMap(Cuenta cuenta)
+        private static NameValueCollection ReverseMap(Cuenta cuenta, string tipo)
         {
             NameValueCollection n = new NameValueCollection();
-            n.Add("nroCuenta", cuenta.NroCuenta);
-            n.Add("descripcion", cuenta.Descripcion);
-            n.Add("saldo", cuenta.Saldo.ToString());
-            n.Add("fechaApertura", cuenta.FechaApertura);
-            n.Add("fechaModificacion", cuenta.FechaModificacion);
-            n.Add("activo", cuenta.Activo.ToString());
-            n.Add("idCliente", cuenta.IdCliente);
+
+            if (tipo == "insert")
+            {
+                n.Add("nroCuenta", cuenta.NroCuenta);
+                n.Add("descripcion", cuenta.Descripcion);
+                n.Add("saldo", cuenta.Saldo.ToString());
+                n.Add("fechaApertura", cuenta.FechaApertura);
+                n.Add("fechaModificacion", cuenta.FechaModificacion);
+                n.Add("activo", cuenta.Activo.ToString());
+                n.Add("idCliente", cuenta.IdCliente.ToString());
+            }
+            else if (tipo == "update")
+            {
+                n.Add("id", cuenta.Id.ToString());
+                n.Add("Saldo", cuenta.Saldo.ToString());
+            }
             return n;
         }
         private static TransactionResult MapResultado(string json)
@@ -45,10 +54,17 @@ namespace Datos
         }
         public static TransactionResult Insert(Cuenta cuenta)
         {
-            NameValueCollection obj = ReverseMap(cuenta);
+            NameValueCollection obj = ReverseMap(cuenta,"insert");
             string result = WebHelper.Post("/api/v1/cuenta", obj);
             TransactionResult resultadoTransaccion = MapResultado(result);
             return resultadoTransaccion; 
+        }
+        public static TransactionResult Actualizar(Cuenta cuenta)
+        {
+            NameValueCollection obj = ReverseMap(cuenta,"update");
+            string result = WebHelper.Post("/api/v1/cuenta", obj);
+            TransactionResult resultadoTransaccion = MapResultado(result);
+            return resultadoTransaccion;
         }
 
         #endregion
