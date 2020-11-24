@@ -37,7 +37,7 @@ namespace Entidades
         {
             get
             {
-                double resultado = CuotaCapital() + CuotaInteres();
+                double resultado = CuotaCapital() + CuotaInteres;
                 return resultado;
             }
         }
