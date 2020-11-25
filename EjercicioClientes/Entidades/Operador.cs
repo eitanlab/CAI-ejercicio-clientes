@@ -13,15 +13,15 @@ namespace Entidades
         double _porcentajeComision;
         public List<Prestamo> Prestamos { get => _prestamos; set => _prestamos= value; }
         public double Comision { get => _comision; set => _comision= value; }
-        public double PorcentajeComision{
-            get {
-                double comisiones = 0;
-                _prestamos.ForEach(prestamo =>
-                {
-                    comisiones += prestamo.CuotaInteres * prestamo.Plazo * 0.15;
-                });
-                return comisiones;
-            } 
-        }
+        //public double PorcentajeComision{
+        //    get {
+        //        double comisiones = 0;
+        //        _prestamos.ForEach(prestamo =>
+        //        {
+        //            comisiones += prestamo.CuotaInteres * prestamo.Plazo * 0.15;
+        //        });
+        //        return comisiones;
+        //    } 
+        //}
     }
 }

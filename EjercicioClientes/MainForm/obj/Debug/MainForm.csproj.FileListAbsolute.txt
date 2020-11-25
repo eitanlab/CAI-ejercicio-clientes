@@ -19,3 +19,4 @@ C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainFor
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.ClientesForm.resources
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.Home.resources
 C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.CuentasForm.resources
+C:\Users\eitan\Repositories\CAI\CAI-ejercicio-clientes\EjercicioClientes\MainForm\obj\Debug\MainForm.PrestamosForm.resources

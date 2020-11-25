@@ -41,6 +41,21 @@ namespace Entidades
                 return resultado;
             }
         }
+        public string Info
+        {
+            get
+            {
+                return ToString();
+            }
+        }
+
+        public override string ToString()
+        {
+            return
+                "Codigo: " + Id +
+                " TNA: " + TNA +
+                " Monto: " + Monto +
+                " Plazo: " + Plazo;
+        }
     }
-}
 }

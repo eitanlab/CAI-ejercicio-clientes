@@ -28,5 +28,11 @@ namespace MainForm
             CuentasForm cuentasForm = new CuentasForm();
             cuentasForm.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PrestamosForm prestamosForm = new PrestamosForm();
+            prestamosForm.ShowDialog();
+        }
     }
 }
