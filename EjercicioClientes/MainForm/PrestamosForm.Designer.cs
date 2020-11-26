@@ -30,46 +30,49 @@
         {
             this.lstTipoPrestamos = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSimular = new System.Windows.Forms.Button();
+            this.txtCuotaTotal = new System.Windows.Forms.TextBox();
+            this.txtCuotaInteres = new System.Windows.Forms.TextBox();
+            this.txtCuotaCapital = new System.Windows.Forms.TextBox();
+            this.txtTNA = new System.Windows.Forms.TextBox();
+            this.txtLinea = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtLinea = new System.Windows.Forms.TextBox();
-            this.txtTNA = new System.Windows.Forms.TextBox();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.txtPlazo = new System.Windows.Forms.TextBox();
-            this.txtCuotaTotal = new System.Windows.Forms.TextBox();
-            this.txtCuotaInteres = new System.Windows.Forms.TextBox();
-            this.txtCuotaCapital = new System.Windows.Forms.TextBox();
-            this.lstPrestamos = new System.Windows.Forms.ListBox();
+            this.btnSimular = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtComisionTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.lstPrestamos = new System.Windows.Forms.ListBox();
+            this.numMonto = new System.Windows.Forms.NumericUpDown();
+            this.numPlazo = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPlazo)).BeginInit();
             this.SuspendLayout();
             // 
             // lstTipoPrestamos
             // 
             this.lstTipoPrestamos.FormattingEnabled = true;
             this.lstTipoPrestamos.Location = new System.Drawing.Point(17, 38);
-            this.lstTipoPrestamos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstTipoPrestamos.Margin = new System.Windows.Forms.Padding(2);
             this.lstTipoPrestamos.Name = "lstTipoPrestamos";
             this.lstTipoPrestamos.Size = new System.Drawing.Size(207, 329);
             this.lstTipoPrestamos.TabIndex = 0;
+            this.lstTipoPrestamos.SelectedIndexChanged += new System.EventHandler(this.lstTipoPrestamos_SelectedIndexChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numPlazo);
+            this.groupBox1.Controls.Add(this.numMonto);
             this.groupBox1.Controls.Add(this.txtCuotaTotal);
             this.groupBox1.Controls.Add(this.txtCuotaInteres);
             this.groupBox1.Controls.Add(this.txtCuotaCapital);
-            this.groupBox1.Controls.Add(this.txtPlazo);
-            this.groupBox1.Controls.Add(this.txtMonto);
             this.groupBox1.Controls.Add(this.txtTNA);
             this.groupBox1.Controls.Add(this.txtLinea);
             this.groupBox1.Controls.Add(this.button1);
@@ -83,72 +86,53 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lstTipoPrestamos);
             this.groupBox1.Location = new System.Drawing.Point(23, 21);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(458, 387);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TIPOS PRESTAMO";
             // 
-            // groupBox2
+            // txtCuotaTotal
             // 
-            this.groupBox2.Controls.Add(this.txtComisionTotal);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.lstPrestamos);
-            this.groupBox2.Location = new System.Drawing.Point(495, 21);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(325, 387);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "PRESTAMOS DADOS DE ALTA";
+            this.txtCuotaTotal.Location = new System.Drawing.Point(334, 295);
+            this.txtCuotaTotal.Name = "txtCuotaTotal";
+            this.txtCuotaTotal.ReadOnly = true;
+            this.txtCuotaTotal.Size = new System.Drawing.Size(106, 20);
+            this.txtCuotaTotal.TabIndex = 16;
             // 
-            // label1
+            // txtCuotaInteres
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(241, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Linea";
+            this.txtCuotaInteres.Location = new System.Drawing.Point(334, 266);
+            this.txtCuotaInteres.Name = "txtCuotaInteres";
+            this.txtCuotaInteres.ReadOnly = true;
+            this.txtCuotaInteres.Size = new System.Drawing.Size(106, 20);
+            this.txtCuotaInteres.TabIndex = 15;
             // 
-            // label2
+            // txtCuotaCapital
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "TNA";
+            this.txtCuotaCapital.Location = new System.Drawing.Point(334, 237);
+            this.txtCuotaCapital.Name = "txtCuotaCapital";
+            this.txtCuotaCapital.ReadOnly = true;
+            this.txtCuotaCapital.Size = new System.Drawing.Size(106, 20);
+            this.txtCuotaCapital.TabIndex = 14;
             // 
-            // label3
+            // txtTNA
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Monto";
+            this.txtTNA.Location = new System.Drawing.Point(313, 71);
+            this.txtTNA.Name = "txtTNA";
+            this.txtTNA.ReadOnly = true;
+            this.txtTNA.Size = new System.Drawing.Size(127, 20);
+            this.txtTNA.TabIndex = 11;
             // 
-            // label4
+            // txtLinea
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Plazo";
-            // 
-            // btnSimular
-            // 
-            this.btnSimular.Location = new System.Drawing.Point(244, 167);
-            this.btnSimular.Name = "btnSimular";
-            this.btnSimular.Size = new System.Drawing.Size(196, 29);
-            this.btnSimular.TabIndex = 5;
-            this.btnSimular.Text = "Simular";
-            this.btnSimular.UseVisualStyleBackColor = true;
+            this.txtLinea.Location = new System.Drawing.Point(313, 42);
+            this.txtLinea.Name = "txtLinea";
+            this.txtLinea.ReadOnly = true;
+            this.txtLinea.Size = new System.Drawing.Size(127, 20);
+            this.txtLinea.TabIndex = 10;
             // 
             // button1
             // 
@@ -186,68 +170,65 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Cuota (Capital)";
             // 
-            // txtLinea
+            // btnSimular
             // 
-            this.txtLinea.Location = new System.Drawing.Point(334, 42);
-            this.txtLinea.Name = "txtLinea";
-            this.txtLinea.ReadOnly = true;
-            this.txtLinea.Size = new System.Drawing.Size(106, 20);
-            this.txtLinea.TabIndex = 10;
+            this.btnSimular.Location = new System.Drawing.Point(244, 167);
+            this.btnSimular.Name = "btnSimular";
+            this.btnSimular.Size = new System.Drawing.Size(196, 29);
+            this.btnSimular.TabIndex = 5;
+            this.btnSimular.Text = "Simular";
+            this.btnSimular.UseVisualStyleBackColor = true;
+            this.btnSimular.Click += new System.EventHandler(this.btnSimular_Click);
             // 
-            // txtTNA
+            // label4
             // 
-            this.txtTNA.Location = new System.Drawing.Point(334, 71);
-            this.txtTNA.Name = "txtTNA";
-            this.txtTNA.ReadOnly = true;
-            this.txtTNA.Size = new System.Drawing.Size(106, 20);
-            this.txtTNA.TabIndex = 11;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(241, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Plazo";
             // 
-            // txtMonto
+            // label3
             // 
-            this.txtMonto.Location = new System.Drawing.Point(334, 100);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(106, 20);
-            this.txtMonto.TabIndex = 12;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(241, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Monto";
             // 
-            // txtPlazo
+            // label2
             // 
-            this.txtPlazo.Location = new System.Drawing.Point(334, 129);
-            this.txtPlazo.Name = "txtPlazo";
-            this.txtPlazo.Size = new System.Drawing.Size(106, 20);
-            this.txtPlazo.TabIndex = 13;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(241, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "TNA";
             // 
-            // txtCuotaTotal
+            // label1
             // 
-            this.txtCuotaTotal.Location = new System.Drawing.Point(334, 295);
-            this.txtCuotaTotal.Name = "txtCuotaTotal";
-            this.txtCuotaTotal.ReadOnly = true;
-            this.txtCuotaTotal.Size = new System.Drawing.Size(106, 20);
-            this.txtCuotaTotal.TabIndex = 16;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(241, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Linea";
             // 
-            // txtCuotaInteres
+            // groupBox2
             // 
-            this.txtCuotaInteres.Location = new System.Drawing.Point(334, 266);
-            this.txtCuotaInteres.Name = "txtCuotaInteres";
-            this.txtCuotaInteres.ReadOnly = true;
-            this.txtCuotaInteres.Size = new System.Drawing.Size(106, 20);
-            this.txtCuotaInteres.TabIndex = 15;
-            // 
-            // txtCuotaCapital
-            // 
-            this.txtCuotaCapital.Location = new System.Drawing.Point(334, 237);
-            this.txtCuotaCapital.Name = "txtCuotaCapital";
-            this.txtCuotaCapital.ReadOnly = true;
-            this.txtCuotaCapital.Size = new System.Drawing.Size(106, 20);
-            this.txtCuotaCapital.TabIndex = 14;
-            // 
-            // lstPrestamos
-            // 
-            this.lstPrestamos.FormattingEnabled = true;
-            this.lstPrestamos.Location = new System.Drawing.Point(14, 28);
-            this.lstPrestamos.Margin = new System.Windows.Forms.Padding(2);
-            this.lstPrestamos.Name = "lstPrestamos";
-            this.lstPrestamos.Size = new System.Drawing.Size(293, 290);
-            this.lstPrestamos.TabIndex = 17;
+            this.groupBox2.Controls.Add(this.txtComisionTotal);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.lstPrestamos);
+            this.groupBox2.Location = new System.Drawing.Point(495, 21);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(325, 387);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "PRESTAMOS DADOS DE ALTA";
             // 
             // txtComisionTotal
             // 
@@ -267,6 +248,54 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Comision Total";
             // 
+            // lstPrestamos
+            // 
+            this.lstPrestamos.FormattingEnabled = true;
+            this.lstPrestamos.Location = new System.Drawing.Point(14, 28);
+            this.lstPrestamos.Margin = new System.Windows.Forms.Padding(2);
+            this.lstPrestamos.Name = "lstPrestamos";
+            this.lstPrestamos.Size = new System.Drawing.Size(293, 290);
+            this.lstPrestamos.TabIndex = 17;
+            // 
+            // numMonto
+            // 
+            this.numMonto.Location = new System.Drawing.Point(313, 100);
+            this.numMonto.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.numMonto.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMonto.Name = "numMonto";
+            this.numMonto.Size = new System.Drawing.Size(127, 20);
+            this.numMonto.TabIndex = 19;
+            this.numMonto.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numPlazo
+            // 
+            this.numPlazo.Location = new System.Drawing.Point(313, 129);
+            this.numPlazo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPlazo.Name = "numPlazo";
+            this.numPlazo.Size = new System.Drawing.Size(127, 20);
+            this.numPlazo.TabIndex = 20;
+            this.numPlazo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // PrestamosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,7 +303,7 @@
             this.ClientSize = new System.Drawing.Size(860, 435);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PrestamosForm";
             this.Text = "PrestamosForm";
             this.Load += new System.EventHandler(this.PrestamosForm_Load);
@@ -282,6 +311,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPlazo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,8 +325,6 @@
         private System.Windows.Forms.TextBox txtCuotaTotal;
         private System.Windows.Forms.TextBox txtCuotaInteres;
         private System.Windows.Forms.TextBox txtCuotaCapital;
-        private System.Windows.Forms.TextBox txtPlazo;
-        private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.TextBox txtTNA;
         private System.Windows.Forms.TextBox txtLinea;
         private System.Windows.Forms.Button button1;
@@ -310,5 +339,7 @@
         private System.Windows.Forms.TextBox txtComisionTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox lstPrestamos;
+        private System.Windows.Forms.NumericUpDown numPlazo;
+        private System.Windows.Forms.NumericUpDown numMonto;
     }
 }

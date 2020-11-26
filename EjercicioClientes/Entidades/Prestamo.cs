@@ -20,16 +20,26 @@ namespace Entidades
         public double Monto { get => _monto; set => _monto = value; }
         public string Usuario { get => _usuario; set => _usuario= value; }
         public int Id { get => _id; set => _id = value; }
-        public double CuotaCapital()
+        public Prestamo() { }
+        public Prestamo(double TNA,int plazo, double monto)
         {
-            double resultado = _monto / _plazo;
-            return resultado;
+            _tna = TNA;
+            _plazo = plazo;
+            _monto = monto;
+        }
+        public double CuotaCapital
+        {
+            get
+            {
+                double resultado = _monto / _plazo;
+                return resultado;
+            }
         }
         public double CuotaInteres
         {
             get
             {
-                double resultado = CuotaCapital() * (_tna / 12 / 100);
+                double resultado = CuotaCapital * (_tna / 12 / 100);
                 return resultado;
             }
         }
@@ -37,7 +47,7 @@ namespace Entidades
         {
             get
             {
-                double resultado = CuotaCapital() + CuotaInteres;
+                double resultado = CuotaCapital + CuotaInteres;
                 return resultado;
             }
         }

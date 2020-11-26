@@ -15,5 +15,10 @@ namespace Negocio
             List<Prestamo> result = PrestamoMapper.TraerTodos();
             return result;
         }
+        public static List<TipoPrestamo> TraerTiposPrestamo()
+        {
+            List<TipoPrestamo> result = TipoPrestamosMapper.TraerTodos();
+            return result;
+        }
     }
 }
