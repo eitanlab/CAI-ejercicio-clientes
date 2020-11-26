@@ -30,12 +30,14 @@
         {
             this.lstTipoPrestamos = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numPlazo = new System.Windows.Forms.NumericUpDown();
+            this.numMonto = new System.Windows.Forms.NumericUpDown();
             this.txtCuotaTotal = new System.Windows.Forms.TextBox();
             this.txtCuotaInteres = new System.Windows.Forms.TextBox();
             this.txtCuotaCapital = new System.Windows.Forms.TextBox();
             this.txtTNA = new System.Windows.Forms.TextBox();
             this.txtLinea = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAltaPrestamo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,12 +50,10 @@
             this.txtComisionTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lstPrestamos = new System.Windows.Forms.ListBox();
-            this.numMonto = new System.Windows.Forms.NumericUpDown();
-            this.numPlazo = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPlazo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstTipoPrestamos
@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.txtCuotaCapital);
             this.groupBox1.Controls.Add(this.txtTNA);
             this.groupBox1.Controls.Add(this.txtLinea);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnAltaPrestamo);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
@@ -93,6 +93,45 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TIPOS PRESTAMO";
+            // 
+            // numPlazo
+            // 
+            this.numPlazo.Location = new System.Drawing.Point(313, 129);
+            this.numPlazo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPlazo.Name = "numPlazo";
+            this.numPlazo.Size = new System.Drawing.Size(127, 20);
+            this.numPlazo.TabIndex = 20;
+            this.numPlazo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numMonto
+            // 
+            this.numMonto.Location = new System.Drawing.Point(313, 100);
+            this.numMonto.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.numMonto.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMonto.Name = "numMonto";
+            this.numMonto.Size = new System.Drawing.Size(127, 20);
+            this.numMonto.TabIndex = 19;
+            this.numMonto.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txtCuotaTotal
             // 
@@ -134,14 +173,15 @@
             this.txtLinea.Size = new System.Drawing.Size(127, 20);
             this.txtLinea.TabIndex = 10;
             // 
-            // button1
+            // btnAltaPrestamo
             // 
-            this.button1.Location = new System.Drawing.Point(244, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 44);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "ALTA";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAltaPrestamo.Location = new System.Drawing.Point(244, 323);
+            this.btnAltaPrestamo.Name = "btnAltaPrestamo";
+            this.btnAltaPrestamo.Size = new System.Drawing.Size(196, 44);
+            this.btnAltaPrestamo.TabIndex = 9;
+            this.btnAltaPrestamo.Text = "ALTA";
+            this.btnAltaPrestamo.UseVisualStyleBackColor = true;
+            this.btnAltaPrestamo.Click += new System.EventHandler(this.btnAltaPrestamo_Click);
             // 
             // label5
             // 
@@ -257,45 +297,6 @@
             this.lstPrestamos.Size = new System.Drawing.Size(293, 290);
             this.lstPrestamos.TabIndex = 17;
             // 
-            // numMonto
-            // 
-            this.numMonto.Location = new System.Drawing.Point(313, 100);
-            this.numMonto.Maximum = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.numMonto.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numMonto.Name = "numMonto";
-            this.numMonto.Size = new System.Drawing.Size(127, 20);
-            this.numMonto.TabIndex = 19;
-            this.numMonto.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numPlazo
-            // 
-            this.numPlazo.Location = new System.Drawing.Point(313, 129);
-            this.numPlazo.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numPlazo.Name = "numPlazo";
-            this.numPlazo.Size = new System.Drawing.Size(127, 20);
-            this.numPlazo.TabIndex = 20;
-            this.numPlazo.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // PrestamosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,10 +310,10 @@
             this.Load += new System.EventHandler(this.PrestamosForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPlazo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMonto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPlazo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,7 +328,7 @@
         private System.Windows.Forms.TextBox txtCuotaCapital;
         private System.Windows.Forms.TextBox txtTNA;
         private System.Windows.Forms.TextBox txtLinea;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAltaPrestamo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

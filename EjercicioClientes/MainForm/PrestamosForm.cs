@@ -33,8 +33,9 @@ namespace MainForm
         {
             try
             {
-                lstPrestamos.Items.Clear();
                 prestamos = PrestamoServicio.TraerTodos();
+                Operador operador = new Operador(prestamos);
+                txtComisionTotal.Text = operador.PorcentajeComision.ToString();
                 var bindingSource1 = new BindingSource();
                 bindingSource1.DataSource = prestamos;
                 lstPrestamos.DataSource = bindingSource1.DataSource;
@@ -83,23 +84,67 @@ namespace MainForm
                 numMonto.Value = 1;
             }
         }
+        private void limpiarForm()
+        {
+            txtComisionTotal.Clear();
+            txtCuotaCapital.Clear();
+            txtCuotaInteres.Clear();
+            txtCuotaTotal.Clear();
+            numMonto.Value = 1;
+            numPlazo.Value = 1;
+        }
+        private void SimularPrestamo(string linea, double tna,int plazo,double monto)
+        {
+            if (string.IsNullOrEmpty(linea) || tna <= 0 || plazo <=0 || monto <= 0)
+            {
+                MessageBox.Show("Para simular un préstamo debe seleccionar un Tipo de Prestamo e ingresar plazo y monto positivos");
+                return;
+            }
+            Prestamo prestamoSimulado = new Prestamo(linea,tna,plazo,monto);
+            txtCuotaCapital.Text = prestamoSimulado.CuotaCapital.ToString();
+            txtCuotaInteres.Text = prestamoSimulado.CuotaInteres.ToString();
+            txtCuotaTotal.Text = prestamoSimulado.Cuota.ToString();
+        }
+        private void AltaPrestamo(string linea,double tna, int plazo, double monto)
+        {
+            if (string.IsNullOrEmpty(linea) || tna <= 0 || plazo <= 0 || monto <= 0)
+            {
+                MessageBox.Show("Para simular un préstamo debe seleccionar un Tipo de Prestamo e ingresar plazo y monto positivos");
+                return;
+            }
+            try
+            {
+                Prestamo prestamo = new Prestamo(linea, tna, plazo, monto);
+                int resultado = PrestamoServicio.InsertarPrestamo(prestamo);
+                MessageBox.Show("Prestamo con ID " + resultado + " creado con éxito");
+            } catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            
+        }
         private void lstTipoPrestamos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstTipoPrestamos.SelectedIndex == -1) return;
             LlenarCamposTiposPrestamo(int.Parse(lstTipoPrestamos.SelectedValue.ToString()));
+            limpiarForm();
         }
-
         private void btnSimular_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTNA.Text) || string.IsNullOrEmpty(txtLinea.Text)) {
-                MessageBox.Show("Para simular un préstamo debe seleccionar un Tipo de Prestamo");
+            SimularPrestamo(txtLinea.Text ,double.Parse(txtTNA.Text), (int)numPlazo.Value, (double)numMonto.Value);
+        }
+        private void btnAltaPrestamo_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtLinea.Text) || string.IsNullOrEmpty(txtTNA.Text) || string.IsNullOrEmpty(txtCuotaCapital.Text) || 
+                string.IsNullOrEmpty(txtCuotaInteres.Text) || string.IsNullOrEmpty(txtCuotaTotal.Text))
+            {
+                MessageBox.Show("Para ingresar un préstamo debe seleccionar un Tipo de Prestamo e ingresar plazo y monto positivos");
                 return;
             }
-            Prestamo prestamoSimulado = new Prestamo(double.Parse(txtTNA.Text), (int)numPlazo.Value, (double)numMonto.Value);
-            txtCuotaCapital.Text = prestamoSimulado.CuotaCapital.ToString();
-            txtCuotaInteres.Text = prestamoSimulado.CuotaInteres.ToString();
-            txtCuotaTotal.Text = prestamoSimulado.Cuota.ToString();
-
+            AltaPrestamo(txtLinea.Text, double.Parse(txtTNA.Text), (int)numPlazo.Value, (double)numMonto.Value);
+            limpiarForm();
+            CargarPrestamos();
         }
+
     }
 }

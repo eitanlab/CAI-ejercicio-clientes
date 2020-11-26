@@ -20,5 +20,17 @@ namespace Negocio
             List<TipoPrestamo> result = TipoPrestamosMapper.TraerTodos();
             return result;
         }
+        public static int InsertarPrestamo(Prestamo prestamo)
+        {
+            TransactionResult resultante = PrestamoMapper.Insert(prestamo);
+            if (resultante.IsOk)
+            {
+                return resultante.Id;
+            }
+            else
+            {
+                throw new Exception("No se pudo crear el prestamo: " + resultante.Error);
+            }
+        }
     }
 }

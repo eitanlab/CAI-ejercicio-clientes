@@ -33,7 +33,7 @@ namespace Datos
             n.Add("tna", prestamo.TNA.ToString());
             n.Add("plazo", prestamo.Plazo.ToString());
             n.Add("monto", prestamo.Monto.ToString());
-            n.Add("usuario", prestamo.Usuario);
+            n.Add("usuario", ConfigurationManager.AppSettings["Legajo"]);
             n.Add("cuota", prestamo.Cuota.ToString());
             
             return n;

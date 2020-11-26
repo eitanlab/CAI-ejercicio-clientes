@@ -21,8 +21,9 @@ namespace Entidades
         public string Usuario { get => _usuario; set => _usuario= value; }
         public int Id { get => _id; set => _id = value; }
         public Prestamo() { }
-        public Prestamo(double TNA,int plazo, double monto)
+        public Prestamo(string linea, double TNA,int plazo, double monto)
         {
+            _linea = linea;
             _tna = TNA;
             _plazo = plazo;
             _monto = monto;
